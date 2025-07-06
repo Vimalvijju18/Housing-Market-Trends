@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story | Housing Market Trends</title>
+  <link rel="stylesheet" href="C:\Users\vimal\OneDrive\Desktop\housing_trends_app\static\style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-background"></div>
+  <div class="scroll-indicator"></div>
+  
+  <nav class="navbar">
+    <h2>Housing Market Trends</h2>
+    <div class="nav-links">
+      <a href="C:\Users\vimal\OneDrive\Desktop\housing_trends_app\static\templates\index.html">Home</a>
+      <a href="C:\Users\vimal\OneDrive\Desktop\housing_trends_app\static\templates\about.html">About</a>
+      <a href="C:\Users\vimal\OneDrive\Desktop\housing_trends_app\static\templates\dashboard.html">Dashboard</a>
+      <a href="C:\Users\vimal\OneDrive\Desktop\housing_trends_app\static\templates\story.html" class="active">Story</a>
+    </div>
+  </nav>
+
+  <div class="overlay story-bg">
+    <div class="container">
+      <h1>Interactive Story</h1>
+      <p>Follow our data-driven narrative exploring the evolution of housing market trends and discover key insights.</p>
+      <div class="tableau-container">
+        <div class='tableauPlaceholder' id='viz_story'>
+          <object class='tableauViz'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='VisualizingHousingMarketTrends_17510297321050/Story1' />
+            <param name='tabs' value='yes' />
+            <param name='toolbar' value='yes' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-GB' />
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz_story');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (window.innerWidth * 0.6) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+    // Scroll indicator
+    window.addEventListener('scroll', () => {
+      const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+    });
+  </script>
+</body>
+</html>
